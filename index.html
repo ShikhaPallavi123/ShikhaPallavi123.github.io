@@ -1,3 +1,982 @@
-<html>
-  <p>Shikha Pallavi</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shikha Pallavi - Software Developer</title>
+<style>
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+ }
+body {
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+line-height: 1.6;
+color: #333;
+background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+min-height: 100vh;
+ }
+.container {
+max-width: 1200px;
+margin: 0 auto;
+padding: 0 20px;
+ }
+header {
+background: #6b46c1;
+position: fixed;
+top: 0;
+left: 0;
+right: 0;
+z-index: 1000;
+padding: 0.8rem 0;
+border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+box-shadow: 0 2px 20px rgba(0,0,0,0.3);
+ }
+nav {
+display: flex;
+justify-content: space-between;
+align-items: center;
+height: 60px;
+ }
+.logo {
+font-size: 1.8rem;
+font-weight: 700;
+color: white;
+text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+letter-spacing: -0.5px;
+ }
+.nav-links {
+display: flex;
+list-style: none;
+gap: 1.5rem;
+margin: 0;
+padding: 0;
+ }
+.nav-links li {
+position: relative;
+ }
+.nav-links a {
+color: white;
+text-decoration: none;
+transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+padding: 0.6rem 1.2rem;
+border-radius: 25px;
+font-weight: 500;
+position: relative;
+overflow: hidden;
+display: block;
+ }
+.nav-links a::before {
+content: '';
+position: absolute;
+top: 0;
+left: -100%;
+width: 100%;
+height: 100%;
+background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+transition: left 0.5s;
+ }
+.nav-links a:hover::before {
+left: 100%;
+ }
+.nav-links a:hover {
+background: rgba(255, 255, 255, 0.25);
+transform: translateY(-2px);
+box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+ }
+.nav-links a.active {
+background: rgba(255, 255, 255, 0.3);
+box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+ }
+main {
+margin-top: 90px;
+ }
+.section {
+scroll-margin-top: 100px;
+ }
+.hero {
+text-align: center;
+padding: 4rem 0;
+color: white;
+position: relative;
+ }
+.hero-content {
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 3rem;
+margin-bottom: 2rem;
+ }
+.hero-text {
+text-align: left;
+flex: 1;
+max-width: 600px;
+ }
+.profile-image {
+width: 200px;
+height: 200px;
+border-radius: 50%;
+border: 4px solid rgba(255, 255, 255, 0.3);
+box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+object-fit: cover;
+animation: fadeInUp 1s ease-out 0.6s both;
+transition: transform 0.3s ease;
+ }
+.profile-image:hover {
+transform: scale(1.05);
+ }
+.hero h1 {
+font-size: 3rem;
+margin-bottom: 1rem;
+text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+animation: fadeInUp 1s ease-out;
+ }
+.hero p {
+font-size: 1.2rem;
+margin-bottom: 2rem;
+opacity: 0.9;
+animation: fadeInUp 1s ease-out 0.2s both;
+ }
+.section {
+background: white;
+margin: 2rem 0;
+padding: 2rem;
+border-radius: 15px;
+box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+animation: fadeInUp 0.8s ease-out;
+ }
+.section h2 {
+font-size: 2rem;
+margin-bottom: 1.5rem;
+color: #333;
+border-bottom: 3px solid #667eea;
+padding-bottom: 0.5rem;
+ }
+.skills-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+gap: 1.5rem;
+margin-top: 1rem;
+ }
+.skill-category {
+background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+padding: 1.5rem;
+border-radius: 10px;
+transition: transform 0.3s ease;
+ }
+.skill-category:hover {
+transform: translateY(-5px);
+ }
+.skill-category h3 {
+color: #667eea;
+margin-bottom: 1rem;
+font-size: 1.1rem;
+ }
+.skill-tags {
+display: flex;
+flex-wrap: wrap;
+gap: 0.5rem;
+ }
+.skill-tag {
+background: #667eea;
+color: white;
+padding: 0.3rem 0.8rem;
+border-radius: 20px;
+font-size: 0.9rem;
+transition: all 0.3s ease;
+ }
+.skill-tag:hover {
+background: #5a67d8;
+transform: scale(1.05);
+ }
+.experience-item {
+background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+padding: 1.5rem;
+margin-bottom: 1.5rem;
+border-radius: 10px;
+border-left: 4px solid #ff6b6b;
+transition: transform 0.3s ease;
+ }
+.experience-item:hover {
+transform: translateX(5px);
+ }
+.experience-header {
+display: flex;
+justify-content: space-between;
+align-items: center;
+margin-bottom: 1rem;
+ }
+.job-title {
+font-size: 1.3rem;
+font-weight: bold;
+color: #333;
+ }
+.company {
+font-size: 1.1rem;
+color: #666;
+margin-bottom: 0.5rem;
+ }
+.duration {
+color: #888;
+font-style: italic;
+ }
+.project-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+gap: 1.5rem;
+margin-top: 1rem;
+ }
+.project-card {
+background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+padding: 1.5rem;
+border-radius: 10px;
+transition: all 0.3s ease;
+border: 2px solid transparent;
+cursor: pointer;
+position: relative;
+overflow: hidden;
+ }
+.project-card:hover {
+transform: translateY(-5px);
+border-color: #667eea;
+box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+ }
+.project-card::before {
+content: '';
+position: absolute;
+top: -50%;
+left: -50%;
+width: 200%;
+height: 200%;
+background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
+transform: rotate(45deg);
+transition: all 0.5s;
+opacity: 0;
+ }
+.project-card:hover::before {
+animation: shimmer 0.8s ease-in-out;
+ }
+@keyframes shimmer {
+ 0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); opacity: 0; }
+ 50% { opacity: 1; }
+ 100% { transform: translateX(100%) translateY(100%) rotate(45deg); opacity: 0; }
+ }
+.project-demo {
+display: none;
+margin-top: 1rem;
+padding: 1rem;
+background: rgba(255, 255, 255, 0.9);
+border-radius: 8px;
+border: 2px solid #667eea;
+ }
+.project-demo.active {
+display: block;
+animation: slideDown 0.3s ease-out;
+ }
+@keyframes slideDown {
+ from { opacity: 0; transform: translateY(-10px); }
+ to { opacity: 1; transform: translateY(0); }
+ }
+.demo-button {
+background: #667eea;
+color: white;
+border: none;
+padding: 0.5rem 1rem;
+border-radius: 20px;
+cursor: pointer;
+font-size: 0.9rem;
+transition: all 0.3s ease;
+margin-top: 0.5rem;
+ }
+.demo-button:hover {
+background: #5a67d8;
+transform: scale(1.05);
+ }
+.demo-output {
+margin-top: 1rem;
+padding: 1rem;
+background: #f7f7f7;
+border-radius: 5px;
+border-left: 4px solid #667eea;
+font-family: monospace;
+font-size: 0.9rem;
+ }
+.project-title {
+font-size: 1.2rem;
+font-weight: bold;
+color: #333;
+margin-bottom: 0.5rem;
+ }
+.project-tech {
+color: #667eea;
+font-size: 0.9rem;
+margin-bottom: 1rem;
+font-weight: 500;
+ }
+.education-item {
+background: linear-gradient(135deg, #e3ffe7 0%, #d9e7ff 100%);
+padding: 1.5rem;
+margin-bottom: 1rem;
+border-radius: 10px;
+border-left: 4px solid #4ecdc4;
+ }
+.degree {
+font-size: 1.2rem;
+font-weight: bold;
+color: #333;
+margin-bottom: 0.5rem;
+ }
+.school {
+color: #666;
+margin-bottom: 0.5rem;
+ }
+.gpa {
+color: #4ecdc4;
+font-weight: bold;
+ }
+.awards {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+gap: 1rem;
+ }
+.award {
+background: linear-gradient(135deg, #ffd89b 0%, #19547b 100%);
+padding: 1.5rem;
+border-radius: 10px;
+color: white;
+text-align: center;
+transition: transform 0.3s ease;
+ }
+.award:hover {
+transform: scale(1.05);
+ }
+.mobile-menu {
+display: none;
+background: rgba(255, 255, 255, 0.2);
+border: 2px solid rgba(255, 255, 255, 0.3);
+color: white;
+font-size: 1.5rem;
+cursor: pointer;
+padding: 0.5rem;
+border-radius: 8px;
+transition: all 0.3s ease;
+ }
+.mobile-menu:hover {
+background: rgba(255, 255, 255, 0.3);
+transform: scale(1.05);
+ }
+
+/* Footer Styles */
+footer {
+background: rgba(0, 0, 0, 0.85);
+backdrop-filter: blur(15px);
+color: white;
+padding: 3rem 0 1rem 0;
+margin-top: 4rem;
+position: relative;
+ }
+footer::before {
+content: '';
+position: absolute;
+top: 0;
+left: 0;
+right: 0;
+height: 1px;
+background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+ }
+.footer-content {
+text-align: center;
+ }
+.footer-title {
+font-size: 2.5rem;
+font-weight: 700;
+margin-bottom: 1rem;
+text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+background: linear-gradient(45deg, #667eea, #764ba2);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+background-clip: text;
+ }
+.footer-subtitle {
+font-size: 1.2rem;
+margin-bottom: 2rem;
+opacity: 0.9;
+ }
+.contact-info {
+display: flex;
+justify-content: center;
+gap: 2rem;
+margin-bottom: 2rem;
+flex-wrap: wrap;
+ }
+.contact-item {
+background: rgba(255, 255, 255, 0.1);
+padding: 1rem 1.5rem;
+border-radius: 25px;
+backdrop-filter: blur(10px);
+transition: all 0.3s ease;
+border: 1px solid rgba(255, 255, 255, 0.2);
+ }
+.contact-item:hover {
+background: rgba(255, 255, 255, 0.2);
+transform: translateY(-2px);
+box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+ }
+.contact-item a {
+color: white;
+text-decoration: none;
+display: flex;
+align-items: center;
+gap: 0.5rem;
+font-weight: 500;
+ }
+.contact-item a:hover {
+color: #667eea;
+ }
+.footer-bottom {
+border-top: 1px solid rgba(255, 255, 255, 0.2);
+padding-top: 1rem;
+margin-top: 2rem;
+text-align: center;
+opacity: 0.7;
+font-size: 0.9rem;
+ }
+
+@keyframes fadeInUp {
+ from {
+opacity: 0;
+transform: translateY(30px);
+ }
+ to {
+opacity: 1;
+transform: translateY(0);
+ }
+ }
+@media (max-width: 768px) {
+.nav-links {
+display: none;
+position: absolute;
+top: 100%;
+left: 0;
+right: 0;
+background: #6b46c1;
+flex-direction: column;
+padding: 1rem;
+border-radius: 0 0 15px 15px;
+box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+margin: 0;
+ }
+.nav-links.active {
+display: flex;
+ }
+.nav-links a {
+color: #fff;
+padding: 0.8rem 1rem;
+border-bottom: 1px solid rgba(255,255,255,0.1);
+border-radius: 8px;
+margin-bottom: 0.5rem;
+ }
+.nav-links a:hover {
+background: #7c3aed;
+color: #fff;
+transform: translateY(-1px);
+ }
+.mobile-menu {
+display: block;
+ }
+.hero h1 {
+font-size: 2.5rem;
+ }
+.hero-content {
+flex-direction: column;
+gap: 2rem;
+ }
+.hero-text {
+text-align: center;
+ }
+.profile-image {
+width: 150px;
+height: 150px;
+ }
+.contact-info {
+flex-direction: column;
+gap: 1rem;
+align-items: center;
+ }
+.contact-item {
+width: 100%;
+max-width: 300px;
+ }
+.experience-header {
+flex-direction: column;
+align-items: flex-start;
+ }
+.nav-links a::before {
+display: none;
+ }
+.footer-title {
+font-size: 2rem;
+ }
+ }
+</style>
+</head>
+<body>
+<header>
+<nav class="container">
+<div class="logo">Shikha Pallavi</div>
+<ul class="nav-links" id="navLinks">
+<li><a href="#about">About</a></li>
+<li><a href="#skills">Skills</a></li>
+<li><a href="#experience">Experience</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#education">Education</a></li>
+<li><a href="#awards">Awards</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+<button class="mobile-menu" onclick="toggleMenu()">☰</button>
+</nav>
+</header>
+<main>
+<section class="hero">
+<div class="container">
+<div class="hero-content">
+<div class="hero-text">
+<h1>Shikha Pallavi</h1>
+<p>Aspiring Software Developer | Full Stack | Cloud Technologies</p>
+</div>
+<img src="/Users/shikhapallavi/VisualStudioProjects/WebDevlopment/Projects/Screenshot 2025-07-21 at 3.21.44 PM.png" alt="Shikha Pallavi" class="profile-image">
+</div>
+</div>
+</section>
+<div class="container">
+<section id="about" class="section">
+<h2>About Me</h2>
+<p>I'm an aspiring Software Developer with extensive experience in software development, cloud technologies, networking, and automation. I'm passionate about designing scalable solutions, optimizing workflows, and building full-stack web applications. My expertise spans across Java, C++, Python, React, and AWS, with a strong focus on innovation, problem-solving, and continuous learning.</p>
+</section>
+<section id="skills" class="section">
+<h2>Technical Skills</h2>
+<div class="skills-grid">
+<div class="skill-category">
+<h3>Programming & Software Development</h3>
+<div class="skill-tags">
+<span class="skill-tag">C++</span>
+<span class="skill-tag">Java</span>
+<span class="skill-tag">Python</span>
+<span class="skill-tag">JavaScript</span>
+<span class="skill-tag">React</span>
+<span class="skill-tag">Node.js</span>
+<span class="skill-tag">MongoDB</span>
+<span class="skill-tag">SQL</span>
+<span class="skill-tag">REST APIs</span>
+</div>
+</div>
+<div class="skill-category">
+<h3>Cloud & DevOps</h3>
+<div class="skill-tags">
+<span class="skill-tag">AWS</span>
+<span class="skill-tag">Docker</span>
+<span class="skill-tag">Kubernetes</span>
+<span class="skill-tag">Jenkins</span>
+<span class="skill-tag">CI/CD</span>
+<span class="skill-tag">Microservices</span>
+</div>
+</div>
+<div class="skill-category">
+<h3>AI & Networking</h3>
+<div class="skill-tags">
+<span class="skill-tag">Generative AI</span>
+<span class="skill-tag">NLP</span>
+<span class="skill-tag">Network Design</span>
+<span class="skill-tag">BGP</span>
+<span class="skill-tag">OSPF</span>
+<span class="skill-tag">VPNs</span>
+</div>
+</div>
+<div class="skill-category">
+<h3>Tools & Testing</h3>
+<div class="skill-tags">
+<span class="skill-tag">Git</span>
+<span class="skill-tag">GitHub</span>
+<span class="skill-tag">Selenium</span>
+<span class="skill-tag">Jest</span>
+<span class="skill-tag">Postman</span>
+<span class="skill-tag">Linux</span>
+</div>
+</div>
+</div>
+</section>
+<section id="experience" class="section">
+<h2>Work Experience</h2>
+<div class="experience-item">
+<div class="experience-header">
+<div>
+<div class="job-title">Software Developer</div>
+<div class="company">Mitiz Technologies - Noida, India</div>
+</div>
+<div class="duration">May 2022 - May 2023</div>
+</div>
+<ul>
+<li>Designed, developed, and maintained client-facing web applications, ensuring seamless functionality and user-friendly experience</li>
+<li>Built a custom frontend testing framework to automate feature testing, improving development efficiency</li>
+<li>Developed RESTful APIs to interact with databases, delivering optimized and scalable data solutions</li>
+<li>Collaborated with cross-functional teams to implement robust, scalable, and efficient web solutions</li>
+</ul>
+</div>
+<div class="experience-item">
+<div class="experience-header">
+<div>
+<div class="job-title">Network Engineer</div>
+<div class="company">British Telecom - Gurgaon, India</div>
+</div>
+<div class="duration">January 2019 - May 2022</div>
+</div>
+<ul>
+<li>Ensured line plant availability and coordinated with technical teams for connectivity, routing, and site planning</li>
+<li>Managed bandwidth provisioning, data integrity, and fiber route planning for core networks</li>
+<li>Supported broadband connectivity and efficient field work execution</li>
+</ul>
+</div>
+<div class="experience-item">
+<div class="experience-header">
+<div>
+<div class="job-title">Data Analyst</div>
+<div class="company">Global Logic - Gurgaon, India</div>
+</div>
+<div class="duration">May 2018 - January 2019</div>
+</div>
+<ul>
+<li>Analyzed and categorized large datasets to ensure platform compliance</li>
+<li>Leveraged data analytics and process automation to enhance operational efficiency</li>
+<li>Collaborated with cross-functional teams to improve content quality and user experience</li>
+</ul>
+</div>
+</section>
+<section id="projects" class="section">
+<h2>Academic Projects</h2>
+<div class="project-grid">
+<div class="project-card" onclick="toggleDemo('chatbot')">
+<div class="project-title">GenAI Chatbot Application</div>
+<div class="project-tech">OpenAI API, NLP, Scalability</div>
+<p>Developed an intelligent chatbot application leveraging OpenAI APIs to provide conversational AI capabilities. Focused on creating a user-friendly interface for seamless communication and ensuring scalability for various use cases.</p>
+<button class="demo-button">Try Demo</button>
+<div class="project-demo" id="chatbot-demo">
+<h4>AI Chatbot Demo</h4>
+<div id="chatbot-output" class="demo-output">
+ Chatbot: Hello! I'm an AI assistant. How can I help you today?
+</div>
+<input type="text" id="chatbot-input" placeholder="Type your message..." style="width: 100%; padding: 0.5rem; margin-top: 0.5rem; border: 1px solid #ddd; border-radius: 5px;">
+<button onclick="sendMessage()" style="margin-top: 0.5rem; padding: 0.5rem 1rem; background: #667eea; color: white; border: none; border-radius: 5px; cursor: pointer;">Send</button>
+</div>
+</div>
+<div class="project-card" onclick="toggleDemo('streaming')">
+<div class="project-title">Live Video Streaming Platform</div>
+<div class="project-tech">Socket.io, WebRTC</div>
+<p>Designed and implemented a live video streaming application enabling real-time video transmission with minimal latency. Optimized streaming protocols for high-quality video playback on a scalable platform.</p>
+<button class="demo-button">View Demo</button>
+<div class="project-demo" id="streaming-demo">
+<h4>Streaming Platform Demo</h4>
+<div class="demo-output">
+<div style="background: #000; color: #0f0; padding: 1rem; border-radius: 5px; font-family: monospace;">
+ [STREAMING SERVER] Starting WebRTC connection...<br>
+ [SOCKET.IO] Client connected: user_12345<br>
+ [VIDEO] Stream quality: 1080p @ 60fps<br>
+ [LATENCY] Current delay: 150ms<br>
+ [STATUS] 🟢 Live streaming active
+</div>
+</div>
+<div style="margin-top: 1rem;">
+<button onclick="simulateStream()" style="padding: 0.5rem 1rem; background: #28a745; color: white; border: none; border-radius: 5px; cursor: pointer; margin-right: 0.5rem;">Start Stream</button>
+<button onclick="stopStream()" style="padding: 0.5rem 1rem; background: #dc3545; color: white; border: none; border-radius: 5px; cursor: pointer;">Stop Stream</button>
+</div>
+</div>
+</div>
+<div class="project-card" onclick="toggleDemo('recommendation')">
+<div class="project-title">Book Recommendation System</div>
+<div class="project-tech">C++, OOP, Algorithms, File I/O</div>
+<p>Built a C++ book recommendation system using OOP principles, dynamic memory allocation, and file I/O. Implemented vector dot product algorithms to provide efficient, personalized recommendations.</p>
+<button class="demo-button">Run Algorithm</button>
+<div class="project-demo" id="recommendation-demo">
+<h4>Book Recommendation Algorithm</h4>
+<div style="margin-bottom: 1rem;">
+<label>Select your favorite genre:</label>
+<select id="genre-select" style="margin-left: 0.5rem; padding: 0.3rem;">
+<option value="fiction">Fiction</option>
+<option value="mystery">Mystery</option>
+<option value="romance">Romance</option>
+<option value="scifi">Sci-Fi</option>
+<option value="biography">Biography</option>
+</select>
+<button onclick="generateRecommendations()" style="margin-left: 0.5rem; padding: 0.3rem 0.8rem; background: #667eea; color: white; border: none; border-radius: 5px; cursor: pointer;">Get Recommendations</button>
+</div>
+<div id="recommendation-output" class="demo-output">
+ Click "Get Recommendations" to see personalized book suggestions!
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="education" class="section">
+<h2>Education</h2>
+<div class="education-item">
+<div class="degree">Certificate in Computer Science Fundamentals</div>
+<div class="school">Seattle University, Washington</div>
+<div class="duration">January 2024 - June 2025</div>
+<div class="gpa">GPA: 4.0/4.0</div>
+<p><strong>Relevant Coursework:</strong> Java, C++, Data Structures, Operating Systems, Computer Architecture, Algorithms, Database Systems, Distributed Computing, Networking and Security</p>
+</div>
+<div class="education-item">
+<div class="degree">Bachelor of Technology in Electronics and Communication</div>
+<div class="school">Hindustan College of Science and Technology, India</div>
+<div class="duration">August 2012 - June 2017</div>
+<div class="gpa">GPA: 3.5/4.0</div>
+<p><strong>Relevant Coursework:</strong> Computer Organization, C Programming, Microprocessors, Computer Networks, Network Security, Network Design and Architecture</p>
+</div>
+</section>
+<section id="awards" class="section">
+<h2>Honors & Awards</h2>
+<div class="awards">
+<div class="award">
+<h3>🏆 Dean's Graduate Student Honor Roll</h3>
+<p>Fall 2024</p>
+<p>Recognized for academic excellence with a perfect 4.0 GPA</p>
+</div>
+<div class="award">
+<h3>🥇 1st Place Winner</h3>
+<p>Sharda-Taj Marathon (5-Mile Run)</p>
+<p>Demonstrated resilience, endurance, and competitive spirit</p>
+</div>
+</div>
+</section>
+</div>
+</main>
+
+<footer id="contact">
+<div class="container">
+<div class="footer-content">
+<h2 class="footer-title">Get In Touch</h2>
+<p class="footer-subtitle">Let's connect and discuss opportunities</p>
+<div class="contact-info">
+<div class="contact-item">
+<a href="mailto:Shikhapallavi10389@gmail.com">
+<span>📧</span>
+Shikhapallavi10389@gmail.com
+</a>
+</div>
+<div class="contact-item">
+<a href="https://linkedin.com/in/shikha-pallavi-3b022115b" target="_blank">
+<span>💼</span>
+LinkedIn Profile
+</a>
+</div>
+<div class="contact-item">
+<a href="https://github.com/ShikhaPallavi123" target="_blank">
+<span>🐙</span>
+GitHub Profile
+</a>
+</div>
+</div>
+<div class="footer-bottom">
+<p>&copy; 2025 Shikha Pallavi. All rights reserved.</p>
+</div>
+</div>
+</div>
+</footer>
+
+<script>
+function toggleMenu() {
+const navLinks = document.getElementById('navLinks');
+navLinks.classList.toggle('active');
+ }
+// Smooth scrolling for navigation links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+anchor.addEventListener('click', function (e) {
+e.preventDefault();
+const target = document.querySelector(this.getAttribute('href'));
+if (target) {
+const headerHeight = 100;
+const targetPosition = target.offsetTop - headerHeight;
+window.scrollTo({
+top: targetPosition,
+behavior: 'smooth'
+ });
+ }
+// Close mobile menu if open
+document.getElementById('navLinks').classList.remove('active');
+// Update active navigation link
+document.querySelectorAll('.nav-links a').forEach(link => {
+link.classList.remove('active');
+ });
+this.classList.add('active');
+ }
+ });
+ });
+// Update active navigation on scroll
+window.addEventListener('scroll', () => {
+const sections = document.querySelectorAll('section[id]');
+const scrollPos = window.scrollY + 120;
+sections.forEach(section => {
+const sectionTop = section.offsetTop;
+const sectionHeight = section.offsetHeight;
+const sectionId = section.getAttribute('id');
+if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
+document.querySelectorAll('.nav-links a').forEach(link => {
+link.classList.remove('active');
+ });
+const activeLink = document.querySelector(`a[href="#${sectionId}"]`);
+if (activeLink) {
+activeLink.classList.add('active');
+ }
+ }
+ });
+ });
+// Project Demo Functions
+function toggleDemo(projectId) {
+const demo = document.getElementById(projectId + '-demo');
+const allDemos = document.querySelectorAll('.project-demo');
+// Close all other demos
+allDemos.forEach(d => {
+if (d !== demo) {
+d.classList.remove('active');
+ }
+ });
+// Toggle current demo
+demo.classList.toggle('active');
+ }
+// Chatbot Demo Functions
+function sendMessage() {
+const input = document.getElementById('chatbot-input');
+const output = document.getElementById('chatbot-output');
+const message = input.value.trim();
+if (message) {
+output.innerHTML += `<br><strong>You:</strong> ${message}`;
+input.value = '';
+// Simulate AI response
+setTimeout(() => {
+const responses = [
+"That's interesting! Tell me more about that.",
+"I understand. How can I help you with that?",
+"Great question! Let me think about that...",
+"I'm here to help! What would you like to know?",
+"Thanks for sharing! Is there anything specific you'd like assistance with?"
+ ];
+const randomResponse = responses[Math.floor(Math.random() * responses.length)];
+output.innerHTML += `<br><strong>Chatbot:</strong> ${randomResponse}`;
+output.scrollTop = output.scrollHeight;
+ }, 1000);
+ }
+ }
+// Streaming Demo Functions
+let streamingActive = false;
+function simulateStream() {
+if (!streamingActive) {
+streamingActive = true;
+const output = document.querySelector('#streaming-demo .demo-output div');
+const streamMessages = [
+'[STREAMING SERVER] Initializing connection...',
+'[SOCKET.IO] Client connected: user_12345',
+'[VIDEO] Stream quality: 1080p @ 60fps',
+'[LATENCY] Current delay: 150ms',
+'[STATUS] 🟢 Live streaming active',
+'[VIEWERS] 1,234 people watching',
+'[BANDWIDTH] Using 5.2 Mbps',
+'[QUALITY] Auto-adjusting based on connection'
+ ];
+let index = 0;
+const interval = setInterval(() => {
+if (index < streamMessages.length && streamingActive) {
+output.innerHTML += '<br>' + streamMessages[index];
+index++;
+ } else {
+clearInterval(interval);
+ }
+ }, 800);
+ }
+ }
+function stopStream() {
+streamingActive = false;
+const output = document.querySelector('#streaming-demo .demo-output div');
+output.innerHTML += '<br>[STATUS] 🔴 Stream stopped by user';
+ }
+// Book Recommendation Functions
+function generateRecommendations() {
+const genre = document.getElementById('genre-select').value;
+const output = document.getElementById('recommendation-output');
+const recommendations = {
+fiction: [
+"📖 'The Seven Husbands of Evelyn Hugo' by Taylor Jenkins Reid",
+"📖 'Where the Crawdads Sing' by Delia Owens",
+"📖 'The Silent Patient' by Alex Michaelides"
+ ],
+mystery: [
+"🔍 'Gone Girl' by Gillian Flynn",
+"🔍 'The Girl with the Dragon Tattoo' by Stieg Larsson",
+"🔍 'Big Little Lies' by Liane Moriarty"
+ ],
+romance: [
+"💕 'The Hating Game' by Sally Thorne",
+"💕 'It Ends with Us' by Colleen Hoover",
+"💕 'The Spanish Love Deception' by Elena Armas"
+ ],
+scifi: [
+"🚀 'Klara and the Sun' by Kazuo Ishiguro",
+"🚀 'The Martian' by Andy Weir",
+"🚀 'Dune' by Frank Herbert"
+ ],
+biography: [
+"📚 'Educated' by Tara Westover",
+"📚 'Becoming' by Michelle Obama",
+"📚 'Steve Jobs' by Walter Isaacson"
+ ]
+ };
+const books = recommendations[genre];
+let outputText = `<strong>Recommended ${genre} books based on your preferences:</strong><br><br>`;
+books.forEach((book, index) => {
+setTimeout(() => {
+outputText += book + '<br>';
+output.innerHTML = outputText;
+ }, index * 500);
+ });
+setTimeout(() => {
+output.innerHTML += '<br><em>📊 Recommendations generated using vector dot product similarity algorithm</em>';
+ }, books.length * 500 + 500);
+ }
+// Add Enter key support for chatbot
+document.addEventListener('DOMContentLoaded', function() {
+const chatInput = document.getElementById('chatbot-input');
+if (chatInput) {
+chatInput.addEventListener('keypress', function(e) {
+if (e.key === 'Enter') {
+sendMessage();
+ }
+ });
+ }
+ });
+// Add animation on scroll
+const observerOptions = {
+threshold: 0.1,
+rootMargin: '0px 0px -50px 0px'
+ };
+const observer = new IntersectionObserver((entries) => {
+entries.forEach(entry => {
+if (entry.isIntersecting) {
+entry.target.style.animationDelay = '0s';
+entry.target.style.animationName = 'fadeInUp';
+ }
+ });
+ }, observerOptions);
+document.querySelectorAll('.section').forEach(section => {
+observer.observe(section);
+ });
+// Add hover effects for interactive elements
+document.querySelectorAll('.skill-tag').forEach(tag => {
+tag.addEventListener('mouseenter', function() {
+this.style.transform = 'scale(1.1) rotate(2deg)';
+ });
+tag.addEventListener('mouseleave', function() {
+this.style.transform = 'scale(1) rotate(0deg)';
+ });
+ });
+</script>
+</body>
 </html>
